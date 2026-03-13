@@ -1,598 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Loke Fu | AI/ML Engineer & Data Scientist</title>
+    
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <title>Loke Fu</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <style>
+        :root {
+            --bg-dark: #090c10;
+            --glass-bg: rgba(22, 27, 34, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --primary-glow: #14b8a6; /* Teal / Cyan matching your resume */
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(-45deg, #090c10, #0d1117, #0a192f, #090c10);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+        /* 导航栏 */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(9, 12, 16, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 18px 0; display: flex; justify-content: center; gap: 25px;
+            flex-wrap: wrap;
+        }
+        nav a { color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { color: var(--primary-glow); text-shadow: 0 0 10px rgba(20, 184, 166, 0.5); }
 
-  <!-- =======================================================
-  * Updated: May 24 2024
-  * Author: Loke Fu
-  ======================================================== -->
+        /* 通用区块设置 */
+        section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Poppins', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; color: #fff; text-align: center; }
+        .section-title span { color: var(--primary-glow); }
+
+        /* Hero 区域 */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: 4.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -2px; }
+        .hero h2 { font-size: 1.5rem; color: var(--text-muted); font-weight: 400; margin-bottom: 10px; }
+        .hero h2 span { color: var(--primary-glow); font-weight: 600; }
+        .hero .pronouns { font-size: 1.2rem; color: #6B7280; margin-bottom: 30px; }
+        
+        .btn-glow {
+            display: inline-block; padding: 12px 30px; margin: 10px; border-radius: 30px;
+            background: transparent; color: var(--primary-glow); border: 2px solid var(--primary-glow);
+            text-decoration: none; font-weight: 600; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .btn-glow:hover { background: var(--primary-glow); color: #000; box-shadow: 0 0 20px rgba(20, 184, 166, 0.6); }
+
+        /* 关于我 (Glass Card) */
+        .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+        .about-img img { width: 100%; max-width: 300px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid var(--glass-border); transition: 0.3s; }
+        .about-img img:hover { transform: translateY(-10px); border-color: var(--primary-glow); }
+        .about-text { background: var(--glass-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(10px); }
+        .about-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; text-align: justify; }
+        
+        /* 技能标签分类 */
+        .skill-category { margin-bottom: 15px; }
+        .skill-category strong { color: #fff; display: inline-block; width: 130px; }
+        .skills-container { display: inline-flex; flex-wrap: wrap; gap: 8px; vertical-align: top; width: calc(100% - 140px); }
+        .skill-tag { background: rgba(20, 184, 166, 0.1); color: var(--primary-glow); padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; border: 1px solid rgba(20, 184, 166, 0.2); transition: 0.3s; }
+        .skill-tag:hover { background: var(--primary-glow); color: #000; box-shadow: 0 0 10px rgba(20, 184, 166, 0.5); }
+
+        /* 简历时间线卡片 */
+        .resume-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px; padding: 30px; margin-bottom: 25px; transition: 0.4s; backdrop-filter: blur(10px); position: relative; overflow: hidden; }
+        .resume-card:hover { transform: translateY(-5px); border-color: rgba(20, 184, 166, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .resume-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary-glow); }
+        .resume-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+        .resume-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+        .resume-location { font-size: 0.9rem; color: var(--text-muted); font-weight: bold; }
+        .resume-subheader { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+        .resume-role { color: var(--primary-glow); font-style: italic; font-weight: 600; }
+        .resume-date { color: var(--text-muted); font-size: 0.9rem; font-style: italic; }
+        .resume-card ul { padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+        .resume-card li { margin-bottom: 8px; text-align: justify; }
+        .resume-card b { color: #e2e8f0; }
+
+        /* 项目演示区 (新增用于视频和图片 Demo) */
+        .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .demo-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px; overflow: hidden; transition: 0.3s; }
+        .demo-card:hover { border-color: var(--primary-glow); box-shadow: 0 10px 20px rgba(20, 184, 166, 0.2); transform: translateY(-5px); }
+        .demo-media { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; overflow: hidden; /* 防止放大时的溢出 */ }
+        /* 如果是视频，自适应铺满。 */
+        .demo-media video, .demo-media img { width: 100%; height: 100%; object-fit: cover; }
+        .demo-info { padding: 20px; }
+        .demo-info h3 { color: #fff; margin-bottom: 10px; font-size: 1.2rem; }
+        .demo-info p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; }
+
+        /* 摄影旅游相册 */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+        .gallery-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; filter: brightness(0.8); }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(1); }
+        .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,184,166,0.9), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h4 { color: #fff; font-size: 1.2rem; margin-bottom: 5px; }
+        .gallery-overlay p { color: #e2e8f0; font-size: 0.9rem; }
+
+        /* 联系方式 */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .contact-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px; padding: 30px; text-align: center; transition: 0.3s; backdrop-filter: blur(10px); }
+        .contact-card:hover { border-color: var(--primary-glow); background: rgba(20, 184, 166, 0.05); }
+        .contact-card i { font-size: 2.5rem; color: var(--primary-glow); margin-bottom: 15px; }
+        .contact-card h3 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
+        .contact-card p, .contact-card a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            transition: 0.3s; 
+            word-break: break-all; /* 保留这一行：强制长邮件断行 */
+        }
+        .contact-card a:hover { color: var(--primary-glow); }
+
+        /* 通用 Lightbox（图片和视频放大器）样式 */
+        .lightbox {
+            display: none; /* 默认隐藏 */
+            position: fixed; z-index: 2000; left: 0; top: 0;
+            width: 100%; height: 100%; overflow: auto;
+            background-color: rgba(9, 12, 16, 0.85); /* 半透明黑底 */
+            backdrop-filter: blur(15px); /* 毛玻璃特效 */
+            -webkit-backdrop-filter: blur(15px);
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .lightbox.show { display: flex; align-items: center; justify-content: center; opacity: 1; }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%; max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(20, 184, 166, 0.4); /* 青色荧光阴影 */
+            transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden; /* 防止视频放大时的溢出 */
+        }
+        .lightbox.show .lightbox-content { transform: scale(1); } /* 弹跳动画 */
+        .lightbox-content img, .lightbox-content video {
+            width: 100%; height: auto; display: block;
+        }
+        .close-lightbox {
+            position: absolute; top: 20px; right: 35px; color: var(--text-muted);
+            font-size: 45px; font-weight: bold; transition: 0.3s; cursor: pointer;
+        }
+        .close-lightbox:hover { color: var(--primary-glow); text-shadow: 0 0 10px var(--primary-glow); }
+
+        /* 滚动动画 class */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .about-img img { margin: 0 auto; }
+            .skill-category strong { display: block; width: 100%; margin-bottom: 10px; }
+            .skills-container { width: 100%; justify-content: center; }
+            .resume-header, .resume-subheader { flex-direction: column; align-items: flex-start; }
+            .resume-location, .resume-date { margin-top: 5px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#demos">AI Demos</a>
+        <a href="#travel">Travel</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-      <h1><a href="index.html">Loke Fu</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <h2>I'm a <span style="color: blanchedalmond; font-weight: bold;">TRAVEL-ENTHUSIAST</span> and a <span style="color: blanchedalmond; font-weight: bold;">DATA SCIENTIST</span> from Hong Kong</h2>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="#header">Home</a></li>
-          <li><a class="nav-link" href="#about"><span style="color: blanchedalmond;">About</span></a></li>
-          <li><a class="nav-link" href="#resume"><span style="color: blanchedalmond;">Resume</span></a></li>
-          <li><a class="nav-link" href="#portfolio"><span style="color: blanchedalmond;">Travel</span></a></li>
-          <li><a class="nav-link" href="#contact"><span style="color: blanchedalmond;">Contact</span></a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/lokefu/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/lokefu/code_example" class="github"><i class="bi bi-github"></i></a>
-        <a href="./Resume_LokeFu.pdf" class="file-earmark-person"><i class="bi bi-file-earmark-person"></i></a>
-      </div>
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
-
-      <div class="section-title">
-        <h2>About</h2>
-        <p>Learn more about me</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/me.jpeg" style="margin-left: 35px;" width="200" height="320" alt=""> <!-- class="img-fluid" -->
+    <section id="home" class="hero">
+        <h1 class="reveal active">LOKE <span>FU</span></h1>
+        <div class="pronouns reveal active">(He/Him)</div>
+        <h2 class="reveal active" style="transition-delay: 0.1s;"><span>DATA SCIENTIST</span> specializing in GenAI, CV & LLM</h2>
+        <div class="reveal active" style="transition-delay: 0.2s; margin-top: 20px;">
+            <a href="#demos" class="btn-glow"><i class="fas fa-play-circle"></i> View Demos</a>
+            <a href="./Resume_LokeFu.pdf" target="_blank" class="btn-glow"><i class="fas fa-file-pdf"></i> Resume PDF</a>
         </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>AI/ML Engineer &amp; Data Scientist</h3>
-          <p class="fst-italic">
-            Love for traveling and exploring new places.
-            Love cooking, reading historical and cultivation novels, and enjoying games like Mario Party and King of Glory.
-          </p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+852 54883808</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Hong Kong</span></li>
-              </ul>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title reveal"><span>About</span> Me</h2>
+        <div class="about-grid reveal">
+            <div class="about-img">
+                <img src="assets/img/me.jpeg" alt="Loke Fu">
             </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>lokefu@connect.hku.hk</span></li>
-              </ul>
+            <div class="about-text">
+                <p>
+                    Results-driven Data Scientist specializing in Generative AI, Large Language Models (LLMs), and Computer Vision. Proven track record of architecting and deploying advanced AI solutions, including high-accuracy object recognition pipelines, RAG-based chatbots, and novel text-to-image generation frameworks. Passionate about leveraging deep learning and multimodal models to drive automation and solve complex business challenges.
+                </p>
+                <div style="margin-top: 30px;">
+                    <div class="skill-category">
+                        <strong>Programming:</strong>
+                        <div class="skills-container">
+                            <div class="skill-tag">Python</div><div class="skill-tag">R</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>ML/AI:</strong>
+                        <div class="skills-container">
+                            <div class="skill-tag">PyTorch</div><div class="skill-tag">Hugging Face</div><div class="skill-tag">TensorFlow</div>
+                            <div class="skill-tag">Scikit-learn</div><div class="skill-tag">LangChain</div><div class="skill-tag">NumPy</div>
+                            <div class="skill-tag">Pandas</div><div class="skill-tag">Matplotlib</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Data & Dev Tools:</strong>
+                        <div class="skills-container">
+                            <div class="skill-tag">SQL</div><div class="skill-tag">Git</div><div class="skill-tag">Docker</div>
+                            <div class="skill-tag">AWS</div><div class="skill-tag">GCP</div><div class="skill-tag">FastAPI</div>
+                            <div class="skill-tag">Gradio</div><div class="skill-tag">HTML/CSS</div><div class="skill-tag">JavaScript</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Languages:</strong>
+                        <div class="skills-container">
+                            <div class="skill-tag">English (Proficient)</div><div class="skill-tag">Mandarin (Native)</div><div class="skill-tag">Cantonese (Conversational)</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <p>
-            I'm is a professional with a strong academic background and expertise in the fields of Machine Learning (ML) and Artificial Intelligence (AI). 
-            I possess a strong passion for AI and always actively seek opportunities in the AIML field. 
-          </p>
         </div>
-      </div>
+    </section>
 
-    </div><!-- End About Me -->
-
-    <!-- ======= Skills  ======= -->
-    <div class="skills container">
-
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-
-      <div class="row skills-content">
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">Programming Languages: Python, R <i class="val">Proficient</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    <section id="experience">
+        <h2 class="section-title reveal">Professional <span>Experience</span></h2>
+        
+        <div class="resume-card reveal">
+            <div class="resume-header">
+                <div class="resume-title">Tictag Singapore (Hong Kong Office)</div>
+                <div class="resume-location">Hong Kong</div>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Machine Learning (Deep Learning): Pytorch, Scikit-learn <i class="val">Proficient</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="resume-subheader">
+                <div class="resume-role">Data Scientist</div>
+                <div class="resume-date">Nov 2024 - Present</div>
             </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Cloud: Google Cloud Platform (BigQuery, AutoML, Vertex AI)<i class="val">Advanced</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">Web Development: HTML, CSS, JavaScript, Bootstrap<i class="val">Advanced</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Data Analysis: SQL, Power BI<i class="val">Advanced</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Version Control: Git, GitHub<i class="val">Advanced</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div><!-- End Skills -->
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-passport-fill" style="color: #ffbb2c;"></i>
-            <h3>Travel</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-book-fill" style="color: #b2904f;"></i>
-            <h3>Reading</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-disc-line" style="color: #b20969;"></i>
-            <h3>Music</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-dice-1-fill" style="color: #29cc61;"></i>
-            <h3>Game</h3>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End Interests -->
-
-  </section><!-- End About Section -->
-
-  <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Resume</h2>
-        <p>Check My Resume</p>
-        <h3 class="resume-title">
-          <a href="./Resume_LokeFu.pdf" download><span style="color: blanchedalmond; font-weight: bold;">Download</span></a>
-        </h3>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <h3 class="resume-title">Summary</h3>
-          <div class="resume-item pb-0">
-            <h4>Loke Fu</h4>
-            <p><em>
-              Innovative Data Scientist with a proven track record of developing advanced AI models and creating intelligent solutions for diverse client projects. Specialized in Machine Learning, Generative AI, and Large Language Models.
-            </em></p>
-            <p>
             <ul>
-              <li>Hong Kong</li>
-              <li>(852) 54883808</li>
-              <li>lokefu@connect.hku.hk</li>
+                <li><b>Spearheaded</b> feature design for retail product development, engineering robust computer vision solutions for human interaction detection, group detection, real-time people tracking, and multi-camera 2D tracking.</li>
+                <li><b>Developed and deployed</b> a product recognition pipeline integrating object detection, segmentation, and an image retrieval embedding database, achieving a <b>96% accuracy rate</b>.</li>
+                <li><b>Automated</b> manual data processing workflows by creating a structured text analysis tool powered by Google Gemini, successfully <b>boosting overall team productivity by 90%</b>.</li>
+                <li><b>Architected</b> an intelligent Q&A chatbot integrating RAG and LLMs (LangChain) to automate the analysis of a multi-modal web database and OCR-supported PDF documents.</li>
+                <li><b>Implemented</b> Multimodal LLMs utilizing a Chain-of-Thought (CoT) approach for complex long-video comprehension, enabling automated event detection, video Q&A, and captioning.</li>
             </ul>
-            </p>
-          </div>
-
-          <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>Master of Science in Artificial Intelligence</h4>
-            <h5>2022 - 2024</h5>
-            <p><em>The University of Hong Kong, Hong Kong</em></p>
-            <p>Research Interests: Diffusion Models, Generative AI & Large Language Models.</p>
-          </div>
-          <div class="resume-item">
-            <h4>Exchange</h4>
-            <h5>2019</h5>
-            <p><em>Harvard University, Massachusetts, U.S.</em></p>
-          </div>
-          <div class="resume-item">
-            <h4>Bachelor of Science in Statistical Decision Sciences (Decision Analytics)</h4>
-            <h5>2018 - 2022</h5>
-            <p><em>The University of Hong Kong, Hong Kong</em></p>
-            <p>Academic Award: HKU Foundation Entrance Scholarships (2018 - 2022)</p>
-          </div>
         </div>
-        <div class="col-lg-6">
-          <h3 class="resume-title">Professional Experience</h3>
-          <div class="resume-item">
-            <h4>Data Scientist</h4>
-            <h5>Nov 2024 - Present</h5>
-            <p><em>
-              Tictag Singapore, Hong Kong Office, Hong Kong
-            </em></p>
-            <p>
+
+        <div class="resume-card reveal">
+            <div class="resume-header">
+                <div class="resume-title">Centre for Advances in Reliability & Safety (HK PolyU & UMD)</div>
+                <div class="resume-location">Hong Kong</div>
+            </div>
+            <div class="resume-subheader">
+                <div class="resume-role">Data Scientist</div>
+                <div class="resume-date">Feb 2024 - Nov 2024</div>
+            </div>
             <ul>
-              <li>
-                Implemented state-of-the-art AI models and applications tailored for esteemed organizations and industry leaders.
-              </li>
-              <li>
-                Pioneered the development of an Intelligence Search Chatbot for National Park Singapore, integrating RAG and LLMs within the LangChain framework alongside OCR capabilities on PDF documents.
-              </li>
-              <li>
-                Engineered a sophisticated Multi-Camera Multi-Object Tracking system featuring cutting-edge Object detection techniques, seamlessly translating video content into a 2D-plane visualization.
-              </li>
-              <li>
-                Applied Multimodal LLM to enhance long-video comprehension, leveraging a Chain-of-Thoughts approach to enable downstream applications like event detection, video Question & Answering, and video captioning.
-              </li>
+                <li><b>Awarded a Gold Medal</b> at the 49th International Exhibition of Inventions Geneva for the "Cable Prognosis" project, demonstrating excellence in predictive modeling and system reliability.</li>
+                <li><b>Built and optimized</b> supervised and unsupervised machine learning models for industrial fault detection, achieving <b>99% accuracy</b> in conjunction with physical simulation modeling.</li>
+                <li><b>Collaborated</b> with senior engineers to streamline UI/UX development for commercial-grade applications.</li>
             </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Data Scientist</h4>
-            <h5>Feb 2024 - Nov 2024</h5>
-            <p><em>
-              Hong Kong PolyU & University of Maryland, Centre for Advances in Reliability and Safety Limited, Hong Kong
-            </em></p>
-            <p>
+        </div>
+
+        <div class="resume-card reveal">
+            <div class="resume-header">
+                <div class="resume-title">The University of Hong Kong (HKU), School of Computing</div>
+                <div class="resume-location">Hong Kong</div>
+            </div>
+            <div class="resume-subheader">
+                <div class="resume-role">Research Assistant (Master's Researcher)</div>
+                <div class="resume-date">Sep 2022 - Jan 2024</div>
+            </div>
             <ul>
-              <li>
-                Developed and implemented AI and machine learning algorithms focused on enhancing reliability and safety, employing predictive modeling, classification techniques, and deep learning networks.
-              </li>
-              <li>
-                Collaborated with senior engineers on software development initiatives for commercial-grade applications.
-              </li>
-              <li>
-                Recognized with a Gold Medal at the 49th International Exhibition of Inventions Geneva for the innovative Cable Prognosis project, showcasing excellence in predictive modeling and reliability analysis.
-              </li>
+                <li><b>Designed and developed</b> <i>DreamMoRe</i>, a novel subject-driven Text-to-Image framework that enhances DreamBooth through Text Rewriting, Image Augmentation, and Multi-Modal Loss integration.</li>
+                <li><b>Achieved state-of-the-art performance</b>, outperforming the baseline DreamBooth model in both quantitative (CLIP) and qualitative (human) evaluations.</li>
+                <li><b>Executed</b> prompt-tuning and instruction-tuning on LLMs to significantly improve image caption quality and complex prompt comprehension capabilities.</li>
+                <li><b>Introduced</b> semantic control mechanisms via CLIP to reinforce prompt accuracy and subject fidelity in generated images.</li>
             </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Research Assistant</h4>
-            <h5>Sep 2022 - Jan 2024</h5>
-            <p><em>The University of Hong Kong (HKU), School of Computing & Data Science, Hong Kong</em></p>
-            <p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title reveal"><span>Education</span></h2>
+        
+        <div class="resume-card reveal">
+            <div class="resume-header">
+                <div class="resume-title">The University of Hong Kong (HKU)</div>
+                <div class="resume-date">2022 - 2024</div>
+            </div>
+            <div class="resume-role" style="color: var(--text-main); font-style: normal; font-size: 1.1rem; margin-top: 5px;">Master of Science in Artificial Intelligence</div>
+        </div>
+
+        <div class="resume-card reveal">
+            <div class="resume-header">
+                <div class="resume-title">The University of Hong Kong (HKU)</div>
+                <div class="resume-date">2018 - 2022</div>
+            </div>
+            <div class="resume-role" style="color: var(--text-main); font-style: normal; font-size: 1.1rem; margin-top: 5px; margin-bottom: 15px;">Bachelor of Science in Statistical Decision Sciences (Decision Analytics)</div>
             <ul>
-              <li>
-                Designed and developed DreamMoRe, a subject-driven Text-to-Image generation framework. Integrated Text Rewriting, Image Augmentation, and Multi-Modal Loss in DreamBooth to enhance image generation capabilities.
-              </li>
-              <li>
-                Implemented Prompt-tuning and Instruction-tuning techniques on Large Language Models to improve image caption quality and enhance the model's comprehension of intricate text prompts.
-              </li>
-              <li>
-                Developed novel image augmentation methodologies using segmentation models and Image-to-Image diffusion models to bolster the training of text-image pairs, thereby enhancing model generalization and robustness.
-              </li>
-              <li>
-                Introduced semantic control through CLIP to reinforce prompt fidelity and subject fidelity.
-              </li>
-              <li>
-                Surpassed DreamBooth in both quantitative CLIP-based metrics and qualitative human assessments.
-              </li>
+                <li><b>Academic Award:</b> HKU Foundation Entrance Scholarships (Full 4-year scholarship)</li>
+                <li><b>Exchange Program:</b> Harvard University, Massachusetts, U.S. (2019)</li>
             </ul>
-            </p>
-          </div>
         </div>
-      </div>
+    </section>
 
+    <section id="demos">
+        <h2 class="section-title reveal">AI <span>Projects & Demos</span></h2>
+        <p class="reveal" style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Showcasing visual results from Computer Vision, Generative AI, and LLM frameworks.</p>
+        
+        <div class="demo-grid reveal">
+            <div class="demo-card">
+                <div class="demo-media">
+                    <video src="assets/img/demos/group_1_0.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="demo-info">
+                    <h3>Video Analytics</h3>
+                    <p>Real-time people detection, tracking and grouping detection.</p>
+                    <div class="skill-tag" style="display:inline-block; font-size: 0.75rem;">Computer Vision</div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-media">
+                    <img src="assets/img/demos/human_like_3.png" alt="Manequin Challenge Demo">
+                </div>
+                <div class="demo-info">
+                    <h3>Human-Like Object Detection</h3>
+                    <p>Exclude human-like objects inside people detection pipeline.</p>
+                    <div class="skill-tag" style="display:inline-block; font-size: 0.75rem;">Computer Vision</div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-media">
+                    <video src="assets/img/demos/RAG_DB_demo.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="demo-info">
+                    <h3>Intelligent Q&A Chatbot (1)</h3>
+                    <p>Automated analysis of web databases and OCR-supported PDFs using LangChain and RAG architecture.</p>
+                    <div class="skill-tag" style="display:inline-block; font-size: 0.75rem;">LLMs & RAG</div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-media">
+                    <video src="assets/img/demos/RAG_PDF.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="demo-info">
+                    <h3>Intelligent Q&A Chatbot (2)</h3>
+                    <p>Automated analysis of web databases and OCR-supported PDFs using LangChain and RAG architecture.</p>
+                    <div class="skill-tag" style="display:inline-block; font-size: 0.75rem;">Generative AI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="travel">
+        <h2 class="section-title reveal">Travel <span>Gallery</span></h2>
+        <div class="gallery reveal">
+            <div class="gallery-item"><img src="assets/img/portfolio/1.jpeg" alt="Nara"><div class="gallery-overlay"><h4>Nara</h4><p>Japan</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/2.jpeg" alt="Beijing"><div class="gallery-overlay"><h4>Beijing</h4><p>China</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/3.jpeg" alt="Cairns"><div class="gallery-overlay"><h4>Cairns</h4><p>Australia</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/5.jpeg" alt="Brisbane"><div class="gallery-overlay"><h4>Brisbane</h4><p>Australia</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/6.jpeg" alt="Sydney"><div class="gallery-overlay"><h4>Sydney</h4><p>Australia</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/7.jpeg" alt="Melbourne"><div class="gallery-overlay"><h4>Melbourne</h4><p>Australia</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/8.jpeg" alt="Chengdu"><div class="gallery-overlay"><h4>Chengdu</h4><p>China</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/9.jpeg" alt="Chongqing"><div class="gallery-overlay"><h4>Chongqing</h4><p>China</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/10.jpeg" alt="New York"><div class="gallery-overlay"><h4>New York</h4><p>U.S.</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/11.jpeg" alt="Los Angeles"><div class="gallery-overlay"><h4>Los Angeles</h4><p>U.S.</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/12.jpeg" alt="Paris"><div class="gallery-overlay"><h4>Paris</h4><p>France</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/13.jpeg" alt="Zhangjiajie"><div class="gallery-overlay"><h4>Zhangjiajie</h4><p>China</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/14.jpeg" alt="Bali"><div class="gallery-overlay"><h4>Bali</h4><p>Indonesia</p></div></div>
+            <div class="gallery-item"><img src="assets/img/portfolio/15.jpeg" alt="Lanzhou"><div class="gallery-overlay"><h4>Lanzhou</h4><p>China</p></div></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title reveal">Let's <span>Connect</span></h2>
+        <div class="contact-grid reveal">
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Hong Kong</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <a href="mailto:fuyicheng20011119@gmail.com">fuyicheng20011119@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p>+852 5488 3808</p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/lokefu/" target="_blank">/in/lokefu</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <a href="https://github.com/lokefu/code_example" target="_blank">lokefu/code_example</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            </div>
     </div>
-  </section><!-- End Resume Section -->
 
-  <!-- ======= Travel Section ======= -->
-  <section id="portfolio" class="portfolio">
-    <div class="container">
+    <footer style="text-align: center; padding: 30px; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.9rem;">
+        <p>© 2026 Designed & Coded by Loke Fu.</p>
+    </footer>
 
-      <div class="section-title">
-        <h2>Travel</h2>
-        <p>My Gallery</p>
-      </div>
+    <script>
+        // 滚动浮现动画函数
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // 初始化执行一次
+        reveal();
 
-      <div class="row portfolio-container">
+        // Lightbox（图片和视频通用放大器）逻辑
+        const lightbox = document.getElementById("lightbox");
+        const lightboxContent = document.querySelector(".lightbox-content");
+        const closeBtn = document.querySelector(".close-lightbox");
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/1.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Nara</h4>
-              <p>Japan</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/1.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Nara, Japan"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        // 获取相册和 Demo 里的所有图片及视频。
+        const clickableElements = document.querySelectorAll(".gallery-item img, .demo-media img, .demo-media video");
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/2.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Beijing</h4>
-              <p>China</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/2.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Beijing, China"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
+        clickableElements.forEach(element => {
+            element.style.cursor = "zoom-in"; // 将鼠标悬停样式设置为放大镜
+            element.addEventListener("click", function() {
+                // 清空之前的 Lightbox 内容
+                lightboxContent.innerHTML = '';
+                
+                const src = this.getAttribute("src");
+                const tagName = this.tagName.toLowerCase();
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/3.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Cairns</h4>
-              <p>Australia</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/3.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cairns, Australia"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
+                if (tagName === "img") {
+                    // 动态创建并注入图片元素
+                    const expandedImg = document.createElement("img");
+                    expandedImg.src = src;
+                    lightboxContent.appendChild(expandedImg);
+                } else if (tagName === "video") {
+                    // 动态创建并注入视频元素，添加播放控制。
+                    const expandedVideo = document.createElement("video");
+                    expandedVideo.src = src;
+                    expandedVideo.setAttribute("controls", ""); // 添加控制条
+                    expandedVideo.setAttribute("autoplay", ""); // 放大后自动播放
+                    expandedVideo.setAttribute("loop", ""); // 设置循环播放
+                    expandedVideo.setAttribute("muted", ""); // 静音以符合 autoplay 策略
+                    lightboxContent.appendChild(expandedVideo);
+                }
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/4.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Cairns</h4>
-              <p>Australia</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/4.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cairns, Australia"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
+                // 显示 Lightbox
+                lightbox.style.display = "flex";
+                // A small delay to allow the `display` change to process before the animation
+                setTimeout(() => { lightbox.classList.add("show"); }, 10);
+            });
+        });
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/5.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Brisbane</h4>
-              <p>Australia</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/5.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Brisbane, Australia"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
+        // 关闭 Lightbox 的公共函数
+        function closeModal() {
+            lightbox.classList.remove("show");
+            // 等待 CSS 动画播完后再隐藏元素。300ms 对应 CSS 中的 transition 持续时间。
+            setTimeout(() => {
+                lightbox.style.display = "none";
+                lightboxContent.innerHTML = ''; // 极其重要：清空内容，停止任何正在播放的视频。
+            }, 300);
+        }
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/6.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Sydney</h4>
-              <p>Australia</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/6.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Sydney, Australia"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/7.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Melbourne</h4>
-              <p>Australia</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/7.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Melbourne, Australia"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/8.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Chengdu</h4>
-              <p>China</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/8.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Chengdu, China"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/9.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Chongqing</h4>
-              <p>China</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/9.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Chongqing, China"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/10.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>New York</h4>
-              <p>U.S.</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/10.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="New York, U.S."><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/11.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Los Angeles</h4>
-              <p>U.S.</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/11.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Los Angeles, U.S."><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/12.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Paris</h4>
-              <p>France</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/12.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Paris, France"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/13.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Zhangjiajie</h4>
-              <p>China</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/13.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Zhangjiajie, China"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/14.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Bali</h4>
-              <p>Indonesia</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/14.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Bali, Indonesia"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/15.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Lanzhou</h4>
-              <p>China</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/15.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lanzhou, China"><i class="bx bx-plus"></i></a>              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Portfolio Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Contact Me</p>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>Central and West, Hong Kong Island, Hong Kong 999077</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/lokefu/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email Me</h3>
-            <p>lokefu@connect.hku.hk</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Call Me</h3>
-            <p>+852 5488 3808</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Contact Section -->
-
-  <div class="credits">
-    Designed by Loke Fu
-  </div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+        // 绑定关闭事件
+        closeBtn.addEventListener("click", closeModal);
+        window.addEventListener("click", function(event) {
+            // 点击放大内容以外的背景区域时关闭
+            if (event.target === lightbox) { closeModal(); }
+        });
+        document.addEventListener("keydown", function(event) {
+            // 按 Esc 键时关闭
+            if (event.key === "Escape" && lightbox.classList.contains("show")) { closeModal(); }
+        });
+    </script>
 </body>
-
 </html>
